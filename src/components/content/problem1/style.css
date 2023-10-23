@@ -1,0 +1,20 @@
+.problem1 {
+  .choose-method {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .method--active {
+      border-radius: 6px;
+      border: 1px solid red;
+      overflow: hidden;
+    }
+  }
+
+  .form {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

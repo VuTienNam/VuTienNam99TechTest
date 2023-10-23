@@ -1,0 +1,20 @@
+.sidebar {
+  width: 200px;
+  border-right: 1px solid black;
+
+  .item {
+    padding: 32px 16px;
+    margin: 24px 12px;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+
+    &.active {
+      font-weight: bold;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #97befc;
+    }
+  }
+}
