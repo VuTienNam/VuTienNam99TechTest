@@ -1,13 +1,16 @@
 .content {
-  flex-grow: 1;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 240px;
+  background-color: #f6f6f9;
 
   .box {
-    width: fit-content;
     border: 1px solid black;
     border-radius: 8px;
-    padding: 5%;
+    padding: max(5%, 12px);
+    margin: 12px;
+    background-color: white;
   }
 }

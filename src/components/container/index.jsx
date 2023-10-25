@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Content from "../content";
 import Sidebar from "../sidebar";
-import "./style.css";
 
 export default function Container() {
   const [chosenProblem, setChosenProblem] = useState(1);

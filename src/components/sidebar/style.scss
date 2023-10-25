@@ -1,5 +1,7 @@
 .sidebar {
-  width: 200px;
+  width: 240px;
+  position: fixed;
+  height: 100vh;
   border-right: 1px solid black;
 
   .item {

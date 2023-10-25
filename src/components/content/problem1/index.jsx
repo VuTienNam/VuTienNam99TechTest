@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { CodeBlock } from "react-code-blocks";
-import "./style.css";
+import "./style.scss";
 import { Button, InputNumber } from "antd";
+import { blockInvalidChar } from "../../../constants";
 
 export default function Problem1() {
   const [maxSafeNumber, setMaxSafeNumber] = useState(100);
@@ -9,12 +10,9 @@ export default function Problem1() {
   const [result, setResult] = useState(0);
   const [method, setMethod] = useState(0);
 
-  const blockInvalidChar = (e) => {
-    return ["e", "E", "+", "-", ".", ","].includes(e.key) && e.preventDefault();
-  };
-
   const sumUsingArithmeticSeries = (n) => {
-    return (n * (n + 1)) / 2;
+    const sum = (n * (n + 1)) / 2;
+    return sum < maxSafeNumber ? sum : maxSafeNumber;
   };
 
   const sumUsingForLoop = (n) => {
@@ -22,7 +20,7 @@ export default function Problem1() {
     for (let i = 1; i <= n; i++) {
       sum += i;
     }
-    return sum;
+    return sum < maxSafeNumber ? sum : maxSafeNumber;
   };
 
   const sumUsingWhileLoop = (n) => {
@@ -32,43 +30,43 @@ export default function Problem1() {
       sum += i;
       i++;
     }
-    return sum;
+    return sum < maxSafeNumber ? sum : maxSafeNumber;
   };
 
   const methodsArray = [
     {
       text: `function sumUsingArithmeticSeries(n) {
-            return (n * (n + 1)) / 2;
-          }`,
+    const sum = (n * (n + 1)) / 2;
+    return sum < MAX_SAFE_INTEGER ? sum : MAX_SAFE_INTEGER;
+  }`,
       func: sumUsingArithmeticSeries,
     },
     {
       text: `function sumUsingForLoop(n) {
-            let sum = 0;
-            for (let i = 1; i <= n; i++) {
-              sum += i;
-            }
-            return sum;
-          }`,
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+    }
+    return sum < MAX_SAFE_INTEGER ? sum : MAX_SAFE_INTEGER;
+  }`,
       func: sumUsingForLoop,
     },
     {
       text: `function sumUsingWhileLoop(n) {
-        let sum = 0;
-        let i = 1;
-        while (i <= n) {
-          sum += i;
-          i++;
-        }
-        return sum;
-      }`,
+    let sum = 0;
+    let i = 1;
+    while (i <= n) {
+      sum += i;
+      i++;
+    }
+    return sum < MAX_SAFE_INTEGER ? sum : MAX_SAFE_INTEGER;
+  }`,
       func: sumUsingWhileLoop,
     },
   ];
 
   const handleGetResult = () => {
-    const sum = methodsArray[method].func(Number(myNumber));
-    setResult(sum > maxSafeNumber ? maxSafeNumber : sum);
+    setResult(methodsArray[method].func(Number(myNumber)));
   };
 
   return (
@@ -92,6 +90,7 @@ export default function Problem1() {
           onChange={setMaxSafeNumber}
           onKeyDown={blockInvalidChar}
           size='large'
+          type='number'
         />
         <InputNumber
           addonBefore='Enter your number'
@@ -99,6 +98,7 @@ export default function Problem1() {
           onChange={setMyNumber}
           onKeyDown={blockInvalidChar}
           size='large'
+          type='number'
         />
         <Button onClick={handleGetResult} size='large'>
           Calculate
