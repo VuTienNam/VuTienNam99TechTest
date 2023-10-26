@@ -185,6 +185,10 @@ export default function Problem2() {
             The submit button only show Success notification because there is no API to
             call.
           </li>
+          <li>
+            My assumption of the calculation: 1 USD = amount * price. I calculate the
+            converting between 2 currencies through USD.
+          </li>
         </ul>
       </Modal>
     </div>
