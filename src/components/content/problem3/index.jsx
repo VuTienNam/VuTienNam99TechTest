@@ -126,6 +126,9 @@ export default function Problem3() {
       I changed it from <b>sortedBalances.map()</b> to <b>formattedBalances.map()</b>.`,
     },
   ];
+
+  const link = "https://github.com/VuTienNam/VuTienNam99TechTest";
+
   return (
     <div className='problem3'>
       {answer.map((item, index) => (
@@ -137,7 +140,18 @@ export default function Problem3() {
           index={index}
         />
       ))}
-      <p>Full code is in this repo:</p>
+      <p>
+        Full code is in this repo:{" "}
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(link);
+          }}
+          href={link}
+        >
+          {link}
+        </a>
+      </p>
     </div>
   );
 }
