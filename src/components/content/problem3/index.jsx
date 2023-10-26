@@ -208,7 +208,7 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 
   return <div {...rest}>{rows}</div>;
 };`}
-        language='js'
+        language='ts'
         showLineNumbers
         wrapLines
       />

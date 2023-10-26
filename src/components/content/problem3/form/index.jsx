@@ -8,11 +8,11 @@ export default function FormProblem3({ before, after, explain, index }) {
       <div className='code-block'>
         <div>
           <span className='title'>BEFORE</span>
-          <CodeBlock text={before} language='js' showLineNumbers={false} wrapLines />
+          <CodeBlock text={before} language='ts' showLineNumbers={false} wrapLines />
         </div>
         <div>
           <span className='title'>AFTER</span>
-          <CodeBlock text={after} language='js' showLineNumbers={false} wrapLines />
+          <CodeBlock text={after} language='ts' showLineNumbers={false} wrapLines />
         </div>
       </div>
       <div className='explain'>
