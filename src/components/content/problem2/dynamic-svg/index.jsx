@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import "./style.scss";
 
-const DynamicSvg = ({ item, setPrice }) => {
+const DynamicSvg = ({ item }) => {
   const [SvgComponent, setSvgComponent] = useState(null);
 
   const importSvg = async (name) => {
@@ -19,9 +19,8 @@ const DynamicSvg = ({ item, setPrice }) => {
   }, [item]);
 
   return (
-    <span className='logo-and-name' onClick={() => setPrice(item.price)}>
+    <span className='logo-and-name'>
       {item.currency}
-      <span>{item.date}</span>
       <Suspense fallback={<></>}>
         <img src={SvgComponent} alt='' />
       </Suspense>

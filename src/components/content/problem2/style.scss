@@ -1,5 +1,33 @@
 .problem2 {
+  .logo {
+    width: 160px;
+    margin: auto;
+  }
+
   label {
     font-weight: bold;
+  }
+
+  .grid {
+    margin-top: 32px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .note {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
   }
 }

@@ -137,6 +137,7 @@ export default function Problem3() {
           index={index}
         />
       ))}
+      <p>Full code is in this repo:</p>
     </div>
   );
 }
